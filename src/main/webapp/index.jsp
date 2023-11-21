@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<jsp:forward page="posts.jsp" />
+<jsp:forward page="onBoardingpage.jsp" />
 
 </body>
 </html>

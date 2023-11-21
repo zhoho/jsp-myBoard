@@ -1,4 +1,4 @@
-package com.crud.common;
+package com.example.jspmyboard.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,15 +7,15 @@ public class JDBCUtil {
     public static Connection getConnection(){
         Connection con=null;
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con= DriverManager.getConnection("jdbc:mysql://db4free.net:3306/dbname","dbid","idpwd");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con= DriverManager.getConnection("jdbc:mysql://walab.handong.edu:3306/p231_21900766","p231_21900766","kioG7u");
         }catch(Exception e){
-            System.out.println(e);
+            System.out.println("error");
         }
         return con;
     }
 
-//	public static void main(String ars[]) {
+//	public static void main(String[] args) {
 //		Connection conn = getConnection();
 //		if(conn != null)
 //			System.out.println("DB 연결됨!");
