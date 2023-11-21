@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name ="author" content="zho_jiho">
+    <meta name ="keywords" content="Handongbti">
+    <meta name ="description" content="handongbti">
+    
+    <meta property = "og:url" content="https://handongbti.netlify.app" />
+    <meta property = "og:title" content="Handongbti" />
+    <meta property = og:type" content="website" />
+    <meta property = og:image" content="./image/mainPage.jpg" />
+    <meta property = og:description" content="한동비티아이(나의유형은?)" />
+
+    <link rel="shortcut icon" href="image/icons.ico">
+    <link rel="apple-touch-icon-precomposed" href="image/icons.ico">
+
+    <title>Handongbti</title>
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/qna.css">
+    <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href="./css/result.css">
+    <link rel="stylesheet" href="./css/alltype.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    <div class="container">
+        <section id="main_page" class="mx-auto my-3 py-3 px-3">
+            <h1>Handongbti</h1>
+            <br><br>
+            <div class="col-6 mx-auto">
+                <img src="./image/mainPage.jpg" alt="mainImage" class="img-fluid" style="width: 100vw;">
+            </div>
+            <p>
+                MBTI in Handong
+                <br>
+                Let's find my personality type in HGU
+            </p>
+            <br>
+            <button type="button" class="btn btn-outline-success mt-2" style="font-size: 20px;" onclick="js:click_startbutton()">Start</button>
+        </section>
+    
+        <section id="qna_page">
+            <div class="questionBox my-5 py-3 mx-auto">
+ 
+            </div>
+            <div class="answerBox my-5 py-3">
+
+            </div>
+        </section>
+        <section id="alltype_page" class="mx-auto my-3 py-3 px-3">
+            <h1>모든 유형 살펴보기</h1>
+            <button onclick="setResult_alltype(0)" class="btn btn-outline-info">한동 열정맨</button>
+            <button onclick="setResult_alltype(1)" class="btn btn-outline-info">한동 츤데레</button>
+            <button onclick="setResult_alltype(2)" class="btn btn-outline-info">한동 박사님</button>
+            <button onclick="setResult_alltype(3)" class="btn btn-outline-info">한동 전략가</button>
+            <button onclick="setResult_alltype(4)" class="btn btn-outline-info">한동 예술가</button>
+            <button onclick="setResult_alltype(5)" class="btn btn-outline-info">한동 수호자</button>
+            <button onclick="setResult_alltype(6)" class="btn btn-outline-info">한동 재주꾼</button>
+            <button onclick="setResult_alltype(7)" class="btn btn-outline-info">한동 논리왕</button>
+            <button onclick="setResult_alltype(8)" class="btn btn-outline-info">한동 활동가</button>
+            <button onclick="setResult_alltype(9)" class="btn btn-outline-info">한동 워리어</button>
+            <button onclick="setResult_alltype(10)" class="btn btn-outline-info">한동 토론왕</button>
+            <button onclick="setResult_alltype(11)" class="btn btn-outline-info">한동 지휘자</button>
+            <button onclick="setResult_alltype(12)" class="btn btn-outline-info">한동 핵인싸</button>
+            <button onclick="setResult_alltype(13)" class="btn btn-outline-info">한동 외교관</button>
+            <button onclick="setResult_alltype(14)" class="btn btn-outline-info">한동 사업가</button>
+            <button onclick="setResult_alltype(15)" class="btn btn-outline-info">한동 경찰관</button>
+        </section>
+        <section id="result_page" class="mx-auto my-3 py-3 px-3">
+            <h1>결과 페이지</h1>
+            <div class="resultName">
+
+            </div>
+            <div id = "resultImage" class="col-6 mx-auto">
+    
+            </div>
+            <p>
+                📌 나의 특징은? 
+            </p>
+            <div class="resultDescription">
+
+            </div>
+            <br>
+            <p>
+                📌 나에게 어울리는 동아리는?
+            </p>
+            <div class="club">
+            </div>
+            <br>
+            <p>
+                📌 주로 여기 있어요
+            </p>
+            <dlv class="place">
+            </dlv>
+            <br><br>
+            <p>
+                📌 나와 어울리는 유형은?
+            </p>
+            <div class="match">
+            </div>
+            <br>
+            <button onclick="click_checkall()" class="btn btn-outline-primary">모든 유형 보러가기</button>
+            <button onclick="click_restart()" class="btn btn-outline-success">다시하기</button>
+            <button onclick="click_sharebutton()" class="btn btn-outline-danger">주소 복사하기</button>
+        </section>
+
+        <script src="./js/data.js" charset="utf-8"></script>
+        <script src="./js/start.js" charset="utf-8"></script>
+    </div>
+</body>
+</html>
