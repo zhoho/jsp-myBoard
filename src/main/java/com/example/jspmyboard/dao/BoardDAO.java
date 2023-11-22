@@ -159,7 +159,6 @@ public class BoardDAO {
 			ScriptEngineManager manager = new ScriptEngineManager();
 			ScriptEngine engine = manager.getEngineByName("javascript");
 
-			// Load the JavaScript file
 			engine.eval("load('" + JS_FILE_PATH + "')");
 
 			if (engine instanceof Invocable) {
