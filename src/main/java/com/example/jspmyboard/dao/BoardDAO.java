@@ -19,8 +19,8 @@ public class BoardDAO {
 	static PreparedStatement stmt = null;
 	static ResultSet rs = null;
 
-	private static final String BOARD_INSERT = "insert into BOARD (title, writer, mbti, content, photo) values (?,?,?,?,?)";
-	private static final String BOARD_UPDATE = "update BOARD set title=?, writer=?, mbti=?, content=?, photo=? where seq=?";
+	private static final String BOARD_INSERT = "insert into BOARD (title, writer, mbti, content, info, photo) values (?,?,?,?,?,?)";
+	private static final String BOARD_UPDATE = "update BOARD set title=?, writer=?, mbti=?, content=?, info=?, photo=? where seq=?";
 	private static final String BOARD_DELETE = "delete from BOARD  where seq=?";
 	private static final String BOARD_GET = "select * from BOARD  where seq=?";
 	private static final String BOARD_LIST = "select * from BOARD order by seq desc";
@@ -39,10 +39,33 @@ public class BoardDAO {
 			stmt.setString(2, vo.getWriter());
 			stmt.setString(3, vo.getMbti());
 			stmt.setString(4, vo.getContent());
-			stmt.setString(5, vo.getPhoto());
+			stmt.setString(5, vo.getInfo());
+			stmt.setString(6, vo.getPhoto());
 			stmt.executeUpdate();
 			callJavaScriptFunction();
 			return 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	public int updateBoard(BoardVO vo) {
+		System.out.println("===> JDBC로 updateBoard() 기능 처리");
+		try {
+			conn = JDBCUtil.getConnection();
+			stmt = conn.prepareStatement(BOARD_UPDATE);
+			stmt.setString(1, vo.getTitle());
+			stmt.setString(2, vo.getWriter());
+			stmt.setString(3, vo.getMbti());
+			stmt.setString(4, vo.getContent());
+			stmt.setString(5, vo.getInfo());
+			stmt.setString(6, vo.getPhoto());
+			stmt.setInt(7, vo.getSeq());
+			stmt.executeUpdate();
+			System.out.println(vo.getTitle() + "-" + vo.getWriter() + "-" + vo.getMbti() + "-" + vo.getContent() + "-" + vo.getSeq());
+			return 1;
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -62,7 +85,7 @@ public class BoardDAO {
 		}
 	}
 
-	public static String getPhotoFilename(int sid) {
+	public String getPhotoFilename(int sid) {
 		String filename = null;
 		try {
 			conn = JDBCUtil.getConnection();
@@ -79,28 +102,6 @@ public class BoardDAO {
 		System.out.println("기능처리");
 		return filename;
 	}
-	public static int updateBoard(BoardVO vo) {
-		System.out.println("===> JDBC로 updateBoard() 기능 처리");
-		try {
-			conn = JDBCUtil.getConnection();
-			stmt = conn.prepareStatement(BOARD_UPDATE);
-			stmt.setString(1, vo.getTitle());
-			stmt.setString(2, vo.getWriter());
-			stmt.setString(3, vo.getMbti());
-			stmt.setString(4, vo.getContent());
-			stmt.setString(5, vo.getPhoto());
-			stmt.setInt(6, vo.getSeq());
-			
-			
-//			System.out.println(vo.getTitle() + "-" + vo.getWriter() + "-" + vo.getMbti() + "-" + vo.getContent() + "-" + vo.getSeq());
-			stmt.executeUpdate();
-			return 1;
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return 0;
-	}	
 	
 	public BoardVO getBoard(int seq) {
 		BoardVO one = new BoardVO();
@@ -117,6 +118,7 @@ public class BoardDAO {
 				one.setMbti(rs.getString("mbti"));
 				one.setContent(rs.getString("content"));
 				one.setPhoto(rs.getString("photo"));
+				one.setInfo(rs.getString("info"));
 				one.setCnt(rs.getInt("cnt"));
 			}
 			rs.close();
@@ -143,6 +145,7 @@ public class BoardDAO {
 				one.setCnt(rs.getInt("cnt"));
 				one.setMbti(rs.getString("mbti"));
 				one.setPhoto(rs.getString("photo"));
+				one.setInfo(rs.getString("info"));
 				list.add(one);
 			}
 			rs.close();

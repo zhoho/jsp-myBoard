@@ -7,11 +7,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Image Grid</title>
-	<!-- Add Bootstrap CSS link -->
+	<title>MBTIBOARD</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="./styleBoard/BoardStyle.css">
+	<link rel="stylesheet" type="text/css" href="style/BoardStyle.css">
 	<style>
 		body {
 			padding: 20px;
@@ -26,7 +25,7 @@
 
 		.image-item {
 			text-align: center;
-			margin-bottom: 20px; /* Add margin to provide space between items */
+			margin-bottom: 20px;
 		}
 
 		.image-item img {
@@ -39,15 +38,21 @@
 		.image-item p {
 			color: black;
 		}
+
+		.custom-btn {
+			margin-right: 10px;
+		}
 	</style>
 </head>
 <body>
 <div class="container">
-	<h1 class="mt-4">Image Grid</h1>
+	<h1 class="mt-4">프로필 목록</h1>
 
 	<div class="mb-3">
-		<a href="addpostform.jsp" class="btn btn-primary">Add New Post</a>
+		<a href="addpostform.jsp" class="btn btn-primary custom-btn">프로필 작성하러 가기</a>
+		<button type="button" onclick="location.href='handongBTI/index.html'" class="btn btn-success custom-btn">나의 한동 MBTI 찾으러 가기</button>
 	</div>
+
 
 	<div class="image-grid">
 		<%

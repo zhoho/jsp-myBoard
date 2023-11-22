@@ -5,30 +5,29 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <style>
     body {
-      background-color: #f8f9fa; /* 배경색 지정 */
+      background-color: #f8f9fa;
     }
-
     .container {
       margin-top: 150px;
     }
 
     .btn-option {
-      width: 100%; /* 버튼의 너비 100%로 설정하여 이미지 크기 일치시킴 */
-      height: auto; /* 높이 자동으로 조정 */
-      padding: 10px; /* 내부 여백 추가 */
-      border: none; /* 테두리 제거 */
+      width: 100%;
+      height: auto;
+      padding: 10px;
+      border: none;
     }
 
     .btn-option img {
-      width: 100%; /* 이미지의 너비 100%로 설정하여 부모 버튼에 맞춤 */
-      height: auto; /* 높이 자동으로 조정 */
-      border-radius: 10px; /* 이미지에 둥근 모서리 추가 */
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
     }
 
     .btn-option p {
-      margin-top: 10px; /* 설명 텍스트와 이미지 간 간격 조정 */
-      font-size: 18px; /* 폰트 크기 지정 */
-      color: black; /* 텍스트 색상 지정 */
+      margin-top: 10px;
+      font-size: 18px;
+      color: black;
     }
   </style>
 </head>
@@ -37,15 +36,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 text-center">
-      <a href="./handongBTI/index.html" class="text-decoration-none btn-option">
-        <img src="./handongBTI/image/mbtiImage.jpeg" alt="Option 2">
-        <p>MBTI</p>
+      <a href="handongBTI/index.html" class="text-decoration-none btn-option">
+        <img src="handongBTI/image/mbtiImage2.png" alt="Option 2">
+        <p>한동 MBTI 검사하러가기</p>
       </a>
     </div>
     <div class="col-md-6 text-center">
       <a href="posts.jsp" class="text-decoration-none btn-option">
-        <img src="./handongBTI/image/boardImage.jpeg" alt="Option 1">
-        <p>게시판</p>
+        <img src="handongBTI/image/profilebasic.jpeg" alt="Option 1">
+        <p>프로필 작성하러 가기</p>
       </a>
     </div>
   </div>

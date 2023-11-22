@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="com.example.jspmyboard.dao.BoardDAO, com.example.jspmyboard.vo.BoardVO"%>
-<%@ page import="com.example.jspmyboard.vo.BoardVO" %>
 <%@ page import="java.util.Objects" %>
 <%@ page import="com.example.jspmyboard.util.FileUpload" %>
 <%
@@ -9,14 +8,10 @@
 	if (!Objects.equals(sid, "")){
 		int id = Integer.parseInt(sid);
 		BoardDAO boardDAO = new BoardDAO();
-
-//		u.setSeq(id);
-//		BoardDAO boardDAO = new BoardDAO();
-		String filename = BoardDAO.getPhotoFilename(id);
+		String filename = boardDAO.getPhotoFilename(id);
 		if(filename != null) {
 			FileUpload.deleteFile(request, filename);
 		}
-
 		boardDAO.deleteBoard(id);
 	}
 	response.sendRedirect("posts.jsp");

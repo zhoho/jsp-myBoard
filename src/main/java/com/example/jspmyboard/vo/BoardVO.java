@@ -1,7 +1,5 @@
 package com.example.jspmyboard.vo;
 
-import com.example.jspmyboard.dao.BoardDAO;
-
 import java.util.Date;
 
 public class BoardVO {
@@ -12,6 +10,7 @@ public class BoardVO {
 	private Date regdate;
 	private String mbti;
 	private String photo;
+	private String info;
 	private int cnt;
 	public int getSeq() {
 		return seq;
@@ -64,5 +63,17 @@ public class BoardVO {
 
 	public void setPhoto(String photo) {
 		this.photo = photo;
+	}
+
+	public String getGetPhoto() {
+		return photo;
+
+	}
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
 	}
 }

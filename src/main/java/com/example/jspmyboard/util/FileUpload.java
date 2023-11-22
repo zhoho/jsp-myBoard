@@ -11,7 +11,7 @@ import java.io.File;
 
 public class FileUpload {
     public BoardVO uploadPhoto(HttpServletRequest request) {
-        String filename ="";
+        String filename = "";
         int sizeLimit = 15 * 1024 * 1024;
 
         String realPath = request.getServletContext().getRealPath("upload");
@@ -26,13 +26,14 @@ public class FileUpload {
             filename = multipartRequest.getFilesystemName("photo");
 
             one = new BoardVO();
-            String sid = multipartRequest.getParameter("sid");
-            if(sid!=null&& !sid.isEmpty()) one.setSeq(Integer.parseInt(sid));
+            String sid = multipartRequest.getParameter("seq");
+            if(sid!=null&& !sid.equals("")) one.setSeq(Integer.parseInt(sid));
             one.setTitle(multipartRequest.getParameter("title"));
             one.setWriter(multipartRequest.getParameter("writer"));
             one.setMbti(multipartRequest.getParameter("mbti"));
             one.setContent(multipartRequest.getParameter("content"));
             one.setPhoto(multipartRequest.getParameter("photo"));
+            one.setInfo(multipartRequest.getParameter("info"));
 
             if(sid != null && !sid.isEmpty()) {
                 BoardDAO dao = new BoardDAO();

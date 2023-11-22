@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>나를 알려줘</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styleBoard/BoardStyle.css">
+    <link rel="stylesheet" type="text/css" href="style/BoardStyle.css">
 </head>
 <body>
 
@@ -28,7 +28,7 @@
                 </label></td>
             </tr>
             <tr>
-                <td>나의 한동 Mbti:</td>
+                <td>나의 한동 MBTI:</td>
                 <td><label>
                     <input type="text" class="form-control" name="mbti"/>
                 </label></td>
@@ -40,20 +40,25 @@
                 </label></td>
             </tr>
             <tr>
+                <td>연락처</td>
+                <td><label>
+                    <input type="text" class="form-control" name="info"/>
+                </label></td>
+            </tr>
+            <tr>
                 <td>Photo</td><td><input type ="file" name="photo"></td>
             </tr>
             <tr>
                 <td colspan="2">
                     <a href="posts.jsp" class="btn btn-secondary">메인으로 돌아가기</a>
                     <input type="submit" class="btn btn-primary" value="Add Post"/>
-                    <a href="./handongBTI/index.html" class="btn btn-secondary">아직 검사 안했다면 클릭!</a>
+                    <a href="handongBTI/index.html" class="btn btn-secondary">아직 검사 안했다면 클릭!</a>
                 </td>
             </tr>
         </table>
     </form>
 </div>
 
-<!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 

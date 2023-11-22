@@ -35,7 +35,7 @@ body {
 
 .image-item {
     text-align: center;
-    margin-bottom: 20px; /* Add margin to provide space between items */
+    margin-bottom: 20px;
 }
 
 .image-item img {
@@ -48,3 +48,11 @@ body {
 .image-item p {
     color: black;
 }
+body {
+    padding: 20px;
+}
+
+.photo-container {
+    text-align: left;
+}
+
